@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section>
+        <h1>Expense Tracker</h1>
+        <div class="bal-section">
+            <div class="bal">
+                Your Balance
+                <span id="bal-amt">₹0.00</span>
+            </div>
+            <div class="summary">
+
+                <div class="inc info-div">
+                    Income
+                    <span id="inc-amt">₹0.00</span>
+                </div>
+                <div class="exp info-div">
+                    Expense
+                    <span id="exp-amt">₹0.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="lowerBar">
+            <div class="transaction-pannel">
+                <h1>Transaction</h1>
+                <div id="list" class="transaction-list">  </div>
+            </div>
+            <div class="transaction-form">
+                <h1>Add Transaction</h1>
+                <div class="form-update">
+                    <label for="description">Description</label>
+                    <input id="description" type="text" placeholder="Enter Description" required>
+                    <label for="amount">Amount</label>
+                    <input id="amount" type="number" placeholder="Enter Amount" required>
+                    <small>Select the type of Transaction-</small>
+                    <div class="toggle-group">
+                        <button id="incomeBtn" class="active">Income</button>
+                        <button id="expenseBtn">Expense</button>
+                    </div>
+                </div>
+                <button type="submit" id="submit">Add Transaction</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

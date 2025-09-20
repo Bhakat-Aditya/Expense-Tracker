@@ -1,0 +1,313 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2e8b57, #a8d5ba);
+    padding: 15px;
+}
+
+section {
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 25px;
+    min-height: 700px;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(135deg, #a8d5ba, #6b8e23);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.bal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+}
+
+.bal span {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.info-div {
+    height: 100px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 19px;
+    transition: transform 0.2s ease;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.info-div span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.info-div:hover {
+    transform: translateY(-3px);
+}
+
+.inc {
+    color: green;
+}
+
+.exp {
+    color: red;
+}
+
+.lowerBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    flex-grow: 1;
+}
+
+.lowerBar h1 {
+    font-size: 20px;
+    text-align: left;
+    color: rgb(84, 46, 46);
+}
+
+.transaction-list {
+    overflow-y: auto;
+    list-style: none;
+    max-height: 400px;
+    flex-grow: 1;
+    padding-right: 8px;
+}
+
+.transaction-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.transaction-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.transaction-list::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #cbd5e0;
+}
+
+.transaction-list::-webkit-scrollbar-thumb:hover {
+    background-color: #a0aec0;
+}
+
+.trans {
+    width: 100%;
+    height: 55px;
+    border-radius: 7px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 9px;
+    transition: all 0.2s ease;
+    animation: slideIn 0.3s ease;
+    background: white;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.trans.exp {
+    border: 1px solid red;
+    border-right: 5px solid red;
+}
+
+.trans.inc {
+    border: 1px solid green;
+    border-right: 5px solid green;
+}
+
+.trans-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.delete-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px;
+    transition: color 0.15s ease, transform 0.12s ease;
+}
+
+.trans:hover .delete-btn {
+    display: inline-block;
+}
+
+.delete-btn:hover {
+    color: #d32f2f;
+    transform: scale(1.06);
+}
+
+.transaction-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-update {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
+    font-size: 20px;
+    color: rgb(84, 46, 46);
+    font-weight: 500;
+}
+
+.form-update input {
+    height: 35px;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.form-update small {
+    color: rgb(84, 46, 46);
+    font-size: 16px;
+}
+
+#submit {
+    margin-top: 25px;
+    background-color: green;
+    font-size: 25px;
+    border-radius: 12px;
+    color: white;
+    height: 55px;
+    transition: transform 0.2s ease;
+}
+
+#submit:hover {
+    transform: translateY(-3px);
+}
+
+#submit:active {
+    transform: translateY(0);
+}
+
+.toggle-group {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+.toggle-group button {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    background: #f1f1f1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#incomeBtn.active {
+    background: #4caf50;
+    color: white;
+}
+
+#expenseBtn.active {
+    background: #f44336;
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .lowerBar {
+        grid-template-columns: 1fr;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+@media (max-height: 700px) {
+    .transaction-list {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 500px) {
+    .bal span {
+        font-size: 28px;
+    }
+
+    .info-div span {
+        font-size: 22px;
+    }
+
+    #submit {
+        font-size: 20px;
+        height: 50px;
+    }
+}
+
+.desc {
+    text-transform: capitalize;
+}
+
+.trans.deleting {
+    background-color: rgba(255, 0, 0, 0.12) !important;
+    opacity: 0.85 !important;
+}
