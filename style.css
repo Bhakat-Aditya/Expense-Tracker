@@ -71,7 +71,7 @@ section {
     font-size: 16px;
     letter-spacing: 2px;
     font-weight: 500;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .info-div span {
@@ -267,9 +267,12 @@ section {
     color: white;
 }
 
+/* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 900px) {
     .lowerBar {
         grid-template-columns: 1fr;
+        /* stack vertically */
+        gap: 15px;
     }
 
     .summary {
@@ -278,30 +281,62 @@ section {
     }
 
     section {
-        padding: 15px;
+        padding: 10px 15px;
+        min-height: 600px;
     }
-}
 
-@media (max-height: 700px) {
-    .transaction-list {
-        max-height: 250px;
+    h1 {
+        font-size: 18px;
     }
 }
 
 @media (max-width: 500px) {
+    .bal {
+        font-size: 20px;
+    }
+
     .bal span {
         font-size: 28px;
     }
 
+    .info-div {
+        height: 70px;
+    }
+
     .info-div span {
-        font-size: 22px;
+        font-size: 16px;
     }
 
     #submit {
-        font-size: 20px;
-        height: 50px;
+        font-size: 18px;
+        height: 45px;
+    }
+
+    .form-update {
+        font-size: 16px;
+        gap: 3px;
+    }
+
+    .form-update input {
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .transaction-list {
+        max-height: 180px;
+        /* shorter for small screen */
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    .toggle-group button {
+        padding: 6px 10px;
+        font-size: 12px;
     }
 }
+
 
 .desc {
     text-transform: capitalize;
